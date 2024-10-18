@@ -23,7 +23,8 @@ pipeline{
                 script{
                     withCredentials([string(credentialsId: 'docker', variable: 'vardockerpassword')]) {
                         bat 'docker login -u bhanusbc -p ${vardockerpassword}'
-                        bat 'docker push bhanusbc/devops-integration:latest'
+                        bat 'docker tag springboot/devops-integration:latest bhanusbc/springboot:devops-integration'
+                        bat 'docker push bhanusbc/springboot:devops-integration'
                     }
                 }
             }
