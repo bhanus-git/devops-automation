@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class DevopsIntegrationApplication {
 
 	@GetMapping
-	public void getMessage()
+	public String getMessage()
 	{
-		System.out.println("welcome to devops-integration Application");
+		return "welcome to devops-integration Application";
 	}
 
 	public static void main(String[] args) {
